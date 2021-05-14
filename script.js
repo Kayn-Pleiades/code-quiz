@@ -26,8 +26,11 @@ function init() {
 $(document).ready(function () {
     $("button").on("click", function () {
         var choice = $(this).text().trim();
-        if (choice === codeQuestions[0].answer) {
-            $(this).removeClass("btn-primary").addClass("btn-success")
+        var score = $("#score").text().trim();
+        var toNumber = parseInt(score);
+        if (choice === codeQuestions[toNumber].answer) {
+            $(this).removeClass("btn-primary").addClass("btn-success");
+            console.log(toNumber);
         }
         else {
             $(this).removeClass("btn-primary").addClass("btn-danger");
