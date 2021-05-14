@@ -22,6 +22,11 @@ function init() {
     }
 };
 
+// Load the next question
+function nextQuestion() {
+    console.log("ready");
+}
+
 // When a choice is clicked on
 $(document).ready(function () {
     $("button").on("click", function () {
@@ -35,6 +40,7 @@ $(document).ready(function () {
             var toNumber = parseInt(score);
             var newScore = toNumber + 1;
             $("#score").text(newScore);
+            setTimeout(function() {nextQuestion()}, 500);
         }
         else {
             $(this).removeClass("btn-primary").addClass("btn-danger");
