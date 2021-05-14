@@ -26,10 +26,14 @@ function init() {
 $(document).ready(function () {
     $("button").on("click", function () {
         var choice = $(this).text().trim();
-        var score = $("#score").text().trim();
-        var toNumber = parseInt(score);
-        if (choice === codeQuestions[toNumber].answer) {
+        var whichQuestion = $("#questionNumber").text().trim();
+        var questionNumber = parseInt(whichQuestion);
+        var arrayNumber = questionNumber - 1;
+        console.log(arrayNumber);
+        if (choice === codeQuestions[arrayNumber].answer) {
             $(this).removeClass("btn-primary").addClass("btn-success");
+            var score = $("#score").text().trim();
+            var toNumber = parseInt(score);
             console.log(toNumber);
         }
         else {
