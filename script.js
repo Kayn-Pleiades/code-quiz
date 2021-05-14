@@ -7,18 +7,34 @@ const codeQuestions = [
     }
 ];
 
-// Load a question when the page loads
+// Load the first question when the page loads
 function init() {
+    console.log("running");
     $("#question").text(codeQuestions[0].question);
     for (i = 0; i < codeQuestions[0].choices.length; i++) {
         var choice = codeQuestions[0].choices[i];
         var code = `
             <br>    
-            <button type="submit" class="btn btn-primary"> ${choice} </button>
+            <button type="button" class="btn btn-primary"> ${choice} </button>
             <br>
     `;
         $("#choices").append(code);
     }
 };
 
+// When a choice is clicked on
+$(document).ready(function () {
+    $("button").on("click", function () {
+        var choice = $(this).text().trim();
+        if (choice === codeQuestions[0].answer) {
+            console.log("correct");
+        }
+        else {
+            console.log(choice);
+            console.log(codeQuestions[0].answer);
+        }
+    });
+});
+
+// Runs when page loads
 init();
