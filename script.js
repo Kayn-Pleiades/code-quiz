@@ -29,12 +29,12 @@ $(document).ready(function () {
         var whichQuestion = $("#questionNumber").text().trim();
         var questionNumber = parseInt(whichQuestion);
         var arrayNumber = questionNumber - 1;
-        console.log(arrayNumber);
         if (choice === codeQuestions[arrayNumber].answer) {
             $(this).removeClass("btn-primary").addClass("btn-success");
             var score = $("#score").text().trim();
             var toNumber = parseInt(score);
-            console.log(toNumber);
+            var newScore = toNumber + 1;
+            $("#score").text(newScore);
         }
         else {
             $(this).removeClass("btn-primary").addClass("btn-danger");
