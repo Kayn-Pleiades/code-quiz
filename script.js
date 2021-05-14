@@ -27,11 +27,10 @@ $(document).ready(function () {
     $("button").on("click", function () {
         var choice = $(this).text().trim();
         if (choice === codeQuestions[0].answer) {
-            console.log("correct");
+            $(this).removeClass("btn-primary").addClass("btn-success")
         }
         else {
-            console.log(choice);
-            console.log(codeQuestions[0].answer);
+            $(this).removeClass("btn-primary").addClass("btn-danger");
         }
     });
 });
