@@ -8,7 +8,12 @@ const codeQuestions = [
     {
         question: "How do you add a comment to a JavaScript file?",
         choices: ["!!", "!--", "//", "* *"],
-        answer: "//",
+        answer: "//"
+    },
+    {
+        question: "What is CSS for?",
+        choices: ["Creating the contents of a webpage", "Controlling how a webpage looks", "Controlling how a webpage reacts", "Making people cry"],
+        answer: "Controlling how a webpage looks"
     }
 ];
 
@@ -70,5 +75,6 @@ $("#choices").on('click', 'button', function (event) {
     }
     else {
         $(this).removeClass("btn-primary").addClass("btn-danger");
+        setTimeout(function () { nextQuestion(questionNumber) }, 500);
     }
 });
