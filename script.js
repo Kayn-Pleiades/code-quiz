@@ -14,6 +14,41 @@ const codeQuestions = [
         question: "What is CSS for?",
         choices: ["Creating the contents of a webpage", "Controlling how a webpage looks", "Controlling how a webpage reacts", "Making people cry"],
         answer: "Controlling how a webpage looks"
+    },
+    {
+        question: "What version of HTML does the internet currently use?",
+        choices: ["1st", "7th", "3rd", "5th"],
+        answer: "5th"
+    },
+    {
+        question: "Which is not a core technology used on the world wide web?",
+        choices: ["JavaScript", "Python", "HTML", "CSS"],
+        answer: "Python"
+    },
+    {
+        question: "In JavaScript, which of the following is not used?",
+        choices: ["const", "let", "def", "var"],
+        answer: "def"
+    },
+    {
+        question: "What is Bootstrap?",
+        choices: ["Framework for building websites", "What you use to tighten your boots", "A JavaScript library", "An HTML markup validation service"],
+        answer: "Framework for building websites"
+    },
+    {
+        question: "Which of these cannot be styled with CSS?",
+        choices: ["Font size", "Creating functions", "Background color", "Add borders"],
+        answer: "Creating functions"
+    },
+    {
+        question: "Which is not used in JavaScript?",
+        choices: ["&&", "||", "@@", "=="],
+        answer: "@@"
+    },
+    {
+        question: "What is a page called when it changes sizes based on the size of the screen it is viewed on?",
+        choices: ["Responsive", "Reactive", "Flexible", "Expanding"],
+        answer: "Responsive"
     }
 ];
 
