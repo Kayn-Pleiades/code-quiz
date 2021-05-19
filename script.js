@@ -58,29 +58,28 @@ var secondsElapsed = 0;
 var interval;
 
 // Displays time and checks if time is up
-
 function renderTime() {
     var timeRemaining = totalSeconds - secondsElapsed;
     $("#timeRemaining").text(timeRemaining);
 
+    if (totalSeconds == secondsElapsed) {
+        stopTimer();
+    }
 }
 
 // Starting the timer
 function startTimer() {
     
     // Every second, 1 second is added to the elapsed time, and then the time remaining is rendered. 
-
     interval = setInterval(function() {
         secondsElapsed++
         renderTime();
     }, 1000);
-
 }
 
 // Load the first question when the page loads
 function init() {
     console.log("running");
-    startTimer();
     $("#question").text(codeQuestions[0].question);
     for (i = 0; i < codeQuestions[0].choices.length; i++) {
         var choice = codeQuestions[0].choices[i];
@@ -91,6 +90,7 @@ function init() {
     `;
         $("#choices").append(code);
     }
+    startTimer();
 };
 
 // Runs when page loads
