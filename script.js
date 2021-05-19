@@ -57,12 +57,27 @@ var totalSeconds = 31;
 var secondsElapsed = 0;
 var interval;
 
+// When the quiz is over
+function gameOver() {
+    score = $("#score").text().trim();
+    $("#body").html("");
+    code = `
+        <div class="row">
+            <div class="col bg-light mt-5 p-5 text-center">
+                <h4>You answered <span id="correct"></span> questions correctly!</div></h4> 
+            </div>
+        </div>
+    `
+    $("#body").html(code);
+    $("#correct").text(score);
+}
+
 // Displays time and checks if time is up
 function renderTime() {
     var timeRemaining = totalSeconds - secondsElapsed;
     $("#timeRemaining").text(timeRemaining);
 
-    if (totalSeconds == secondsElapsed) {
+    if (totalSeconds <= secondsElapsed) {
         clearInterval(interval);
         $("#timeRemaining").text("Time is up!");
     }
@@ -117,7 +132,7 @@ function nextQuestion(lastQuestion) {
         }
     }
     else {
-        console.log("end");
+        gameOver();
     }
 }
 
