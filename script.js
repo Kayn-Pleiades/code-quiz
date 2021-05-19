@@ -52,9 +52,35 @@ const codeQuestions = [
     }
 ];
 
+// Time variables
+var totalSeconds = 31;
+var secondsElapsed = 0;
+var interval;
+
+// Displays time and checks if time is up
+
+function renderTime() {
+    var timeRemaining = totalSeconds - secondsElapsed;
+    $("#timeRemaining").text(timeRemaining);
+
+}
+
+// Starting the timer
+function startTimer() {
+    
+    // Every second, 1 second is added to the elapsed time, and then the time remaining is rendered. 
+
+    interval = setInterval(function() {
+        secondsElapsed++
+        renderTime();
+    }, 1000);
+
+}
+
 // Load the first question when the page loads
 function init() {
     console.log("running");
+    startTimer();
     $("#question").text(codeQuestions[0].question);
     for (i = 0; i < codeQuestions[0].choices.length; i++) {
         var choice = codeQuestions[0].choices[i];
