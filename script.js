@@ -63,18 +63,21 @@ function renderTime() {
     $("#timeRemaining").text(timeRemaining);
 
     if (totalSeconds == secondsElapsed) {
-        console.log("time is up");
+        clearInterval(interval);
+        $("#timeRemaining").text("Time is up!");
     }
 }
 
 // Starting the timer
 function startTimer() {
     
-    // Every second, 1 second is added to the elapsed time, and then the time remaining is rendered. 
-    interval = setInterval(function() {
+    if (totalSeconds > 0) {
+        // Every second, 1 second is added to the elapsed time, and then the time remaining is rendered. 
+        interval = setInterval(function() {
         secondsElapsed++
         renderTime();
     }, 1000);
+    }
 }
 
 // Load the first question when the page loads
