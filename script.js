@@ -63,7 +63,7 @@ function renderTime() {
     $("#timeRemaining").text(timeRemaining);
 
     if (totalSeconds == secondsElapsed) {
-        stopTimer();
+        console.log("time is up");
     }
 }
 
@@ -132,10 +132,12 @@ $("#choices").on('click', 'button', function (event) {
         var toNumber = parseInt(score);
         var newScore = toNumber + 1;
         $("#score").text(newScore);
+        totalSeconds = totalSeconds + 10;
         setTimeout(function () { nextQuestion(questionNumber) }, 500);
     }
     else {
         $(this).removeClass("btn-primary").addClass("btn-danger");
+        totalSeconds = totalSeconds - 10;
         setTimeout(function () { nextQuestion(questionNumber) }, 500);
     }
 });
